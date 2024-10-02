@@ -71,7 +71,7 @@ header .logo a span {
     font-size: 14px;
 }
 
-.btn-reservation {
+.btn-rsrvt {
     color: #dca50e;
     font-size: 14px;
     border: 2px solid #dca50e;
@@ -80,7 +80,7 @@ header .logo a span {
     font-weight: bolder;
 }
 
-.btn-reservation:hover {
+.btn-rsrvt:hover {
     background-color: #dca50e;
     color: #fff;
 
