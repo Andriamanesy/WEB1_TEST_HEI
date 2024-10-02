@@ -10,17 +10,15 @@
 </head>
 
 <body>
-
     <header>
         <div class="logo">
             <a href="index.html"> <span>HEI-</span>IMMO</a>
         </div>
         <ul class="menu">
-            <li><a href="#">Acceuil</a></li>
+            <li><a href="#">Accueil</a></li>
             <li><a href="#contact">Connexion</a></li>
         </ul>
         <a href="#" class="btn-reservation">Réserver Maintenant</a>
-
         <div class="responsive-menu"></div>
     </header>
 
@@ -30,26 +28,49 @@
             neque.</p>
         <p>molestiae illum eaque praesentium esse. Quos iusto.</p>
         <a href="#" class="btn-reservation home-btn">Réserver Maintenant</a>
-
     </section>
 
     <section id="contact">
-        <h1 class="title">Connexion</h1>
-        <form action="">
+        <form id="loginForm">
+            <h1 class="title">Connexion</h1>
             <div class="left-right">
                 <div class="left">
-                    <label>E-mail</label>
-                    <input type="email" required>
-                    <label>Mot de passe</label>
-                    <input type="password" required>
-                </div>
-                <div class="right">
+                    <label for="email">E-mail</label>
+                    <input id="email" type="email" required>
+                    <label for="password">Mot de passe</label>
+                    <input id="password" type="password" required>
                 </div>
             </div>
-            <button>Envoyer</button>
+            <button type="submit">Envoyer</button>
+            <p id="message"></p>
         </form>
     </section>
 
+    <script>
+        const form = document.getElementById('loginForm');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const message = document.getElementById('message');
+
+        const validEmail = 'test@mail.hei.school';
+        const validPassword = 'admin';
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const email = emailInput.value;
+            const password = passwordInput.value;
+
+
+            if (email === validEmail && password === validPassword) {
+                message.textContent = 'Bienvenue !';
+                message.style.color = 'green';
+            } else {
+                message.textContent = 'Erreur : email ou mot de passe incorrect.';
+                message.style.color = 'red';
+            }
+        });
+    </script>
 </body>
 
 </html>
